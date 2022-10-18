@@ -1,0 +1,16 @@
+{
+    "CN": "autom",
+    "key": {
+        "algo": "rsa",
+        "size": 2048
+    },
+    "names": [
+        {
+            "C": "CN",
+            "L": "Shenzhen",
+            "ST": "Guangdong",
+            "O": "Gitee",
+            "OU": "Autom"
+        }
+    ]
+}
