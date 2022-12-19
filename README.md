@@ -18,7 +18,7 @@ cd ca
 
 ```
 export SELF_CN=gitlife.com
-cat > ../json/server-csr.json <<EOF
+cat > ../json/$SELF_CN-server-csr.json <<EOF
 {
     "CN": "$SELF_CN",
     "hosts": [
@@ -47,7 +47,7 @@ EOF
 ```
 export SELF_CN=gitlife.com
 cd ../out
-../bin/cfssl gencert -ca=../ca/ca.pem -ca-key=../ca/ca-key.pem -config=../json/ca-config.json -profile=peer ../json/server-csr.json | ../bin/cfssljson -bare $SELF_CN
+../bin/cfssl gencert -ca=../ca/ca.pem -ca-key=../ca/ca-key.pem -config=../json/ca-config.json -profile=peer ../json/$SELF_CN-server-csr.json | ../bin/cfssljson -bare $SELF_CN
 ```
 
 ## Usage
