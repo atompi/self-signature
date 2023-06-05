@@ -34,7 +34,7 @@ cat > ../json/$SELF_CN-server-csr.json <<EOF
             "C": "CN",
             "L": "Shenzhen",
             "ST": "Guangdong",
-            "O": "Gitee",
+            "O": "Autom",
             "OU": "Autom"
         }
     ]
@@ -42,7 +42,7 @@ cat > ../json/$SELF_CN-server-csr.json <<EOF
 EOF
 ```
 
-## create certs
+## create certs (If necessary, modify the certificate age in ca-config.json)
 
 ```
 export SELF_CN=gitlife.com
