@@ -4,7 +4,7 @@
         "expiry": "876000h"
     },
     "key": {
-        "algo": "ed25519",
+        "algo": "rsa",
         "size": 4096
     },
     "names": [
