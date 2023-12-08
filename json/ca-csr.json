@@ -1,19 +1,19 @@
 {
-    "CN": "autom",
+    "CN": "atompi",
     "CA": {
         "expiry": "876000h"
     },
     "key": {
-        "algo": "rsa",
-        "size": 2048
+        "algo": "ed25519",
+        "size": 4096
     },
     "names": [
         {
             "C": "CN",
-            "L": "Shenzhen",
             "ST": "Guangdong",
-            "O": "Autom",
-            "OU": "Autom"
+            "L": "Shenzhen",
+            "O": "AtomPi",
+            "OU": "AtomPi"
         }
     ]
 }

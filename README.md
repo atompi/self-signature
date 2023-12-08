@@ -17,35 +17,13 @@ cd ca
 ## generate server-csr.json
 
 ```
-export SELF_CN=gitlife.com
-cat > ../json/$SELF_CN-server-csr.json <<EOF
-{
-    "CN": "$SELF_CN",
-    "hosts": [
-        "$SELF_CN",
-        "*.$SELF_CN"
-    ],
-    "key": {
-        "algo": "rsa",
-        "size": 2048
-    },
-    "names": [
-        {
-            "C": "CN",
-            "L": "Shenzhen",
-            "ST": "Guangdong",
-            "O": "Autom",
-            "OU": "Autom"
-        }
-    ]
-}
-EOF
+export SELF_CN=atompi.cc
+cat ../json/server-csr.json.tmpl | sed "s/SELF_CN/$SELF_CN/g" > ../json/$SELF_CN-server-csr.json
 ```
 
 ## create certs (If necessary, modify the certificate age in ca-config.json)
 
 ```
-export SELF_CN=gitlife.com
 cd ../out
 ../bin/cfssl gencert -ca=../ca/ca.pem -ca-key=../ca/ca-key.pem -config=../json/ca-config.json -profile=peer ../json/$SELF_CN-server-csr.json | ../bin/cfssljson -bare $SELF_CN
 ```
@@ -60,9 +38,9 @@ cd ../out
 
 ```
 mkdir -p bin
-proxy wget https://github.com/cloudflare/cfssl/releases/download/v1.6.3/cfssl-certinfo_1.6.3_linux_amd64 -O bin/cfssl-certinfo
-proxy wget https://github.com/cloudflare/cfssl/releases/download/v1.6.3/cfssljson_1.6.3_linux_amd64 -O bin/cfssljson
-proxy wget https://github.com/cloudflare/cfssl/releases/download/v1.6.3/cfssl_1.6.3_linux_amd64 -O bin/cfssl
+proxy wget https://github.com/cloudflare/cfssl/releases/download/v1.6.5/cfssl-certinfo_1.6.5_linux_amd64 -O bin/cfssl-certinfo
+proxy wget https://github.com/cloudflare/cfssl/releases/download/v1.6.5/cfssljson_1.6.5_linux_amd64 -O bin/cfssljson
+proxy wget https://github.com/cloudflare/cfssl/releases/download/v1.6.5/cfssl_1.6.5_linux_amd64 -O bin/cfssl
 ```
 
 ### generate default json
