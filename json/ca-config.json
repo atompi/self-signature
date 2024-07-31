@@ -5,7 +5,7 @@
         },
         "profiles": {
             "peer": {
-                "expiry": "876000h",
+                "expiry": "8760h",
                 "usages": [
                     "signing",
                     "key encipherment",
@@ -14,7 +14,7 @@
                 ]
             },
             "server": {
-                "expiry": "876000h",
+                "expiry": "8760h",
                 "usages": [
                     "signing",
                     "key encipherment",
@@ -22,7 +22,7 @@
                 ]
             },
             "client": {
-                "expiry": "876000h",
+                "expiry": "8760h",
                 "usages": [
                     "signing",
                     "key encipherment",
